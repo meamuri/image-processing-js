@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>КГ</title>
+
+    <link href="src/style.css" rel="stylesheet">
+
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="assets/slider/css/slider.css"
+          rel="stylesheet">
+
+    <script type="text/javascript" src="assets/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="assets/slider/js/bootstrap-slider.js"></script>
+</head>
+<body>
+
+
+<!--
+HEADER
+-->
+<div class="container header-container"><div class="row">
+        <div class="col-xs-6 cols-md-6">
+
+        </div>
+
+        <div class="col-xs-6 cols-md-6">
+
+        </div>
+
+</div></div>
+
+
+<div class="container body-container">
+    <div class="row">
+        <div class="col-xs-6 cols-md-6">
+            <div class="input-group margin-bottom-sm">
+                <label class="control-label">Select File</label>
+                <input class="form-control" type='file' name='img' size='65' id='upload-image' />
+            </div>
+        </div>
+
+        <div class="col-xs-6 cols-md-6">
+            <div class="input-group margin-bottom-sm">
+                <label class="control-label">Изменение яркости</label><br>
+                <input id="slider" type="text"
+                       data-slider-min="-50"
+                       data-slider-max="50"
+                       data-slider-step="5"
+                       data-slider-value="0"/>
+                &nbsp;&nbsp;
+                <button id="destroyEx5Slider" class='btn btn-danger'>Применить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 cols-md-6">
+            <!--<canvas id="in-canvas" style="float:left"></canvas>-->
+            <div id="output-img" style="float:left"></div>
+        </div>
+        <div class="col-xs-6 cols-md-6">
+            <!--<canvas id="out-canvas" style="float:right"></canvas>-->
+            <div id="input-img" style="float:right"></div>
+        </div>
+    </div>
+</div>
+
+<!--
+FOOTER
+-->
+<div class="container footer-container">
+    <div class="row"><div class="col-xs-12 cols-md-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                ВГУ, 2017, курс "компьютерная графика"
+            </div>
+            <div class="panel-body">
+                <p>&copy; 2017 - выполнил Дронов Р.</p>
+            </div>
+        </div>
+    </div></div>
+</div>
+
+<script src="src/init.js" type="text/javascript" defer></script>
+<script src="src/main.js" type="text/javascript" defer></script>
+</body>
+</html>
