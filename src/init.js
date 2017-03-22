@@ -7,10 +7,9 @@ function renderCanvas(img) {
     let ratio = Math.min(hRatio, vRatio);
     let centerShift_x = ( canvas.width - img.width*ratio ) / 2;
     let centerShift_y = ( canvas.height - img.height*ratio ) / 2;
-    ctx.clearRect(0,0,canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     img.onload = () => {
         ctx.drawImage(img, 0,0, img.width, img.height,centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
-        // ctx.drawImage(img, 0,0);
         img.style.display = 'none';
     };
 }
