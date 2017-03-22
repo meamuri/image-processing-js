@@ -1,5 +1,3 @@
-
-
 let toByte = (val) => {
   if (val > 255) {
       return 255;
@@ -8,6 +6,7 @@ let toByte = (val) => {
       return 0;
   return val;
 };
+
 let processingBrightness = (ctx, brightness) => {
 
 };
