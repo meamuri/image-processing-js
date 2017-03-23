@@ -44,13 +44,12 @@ HEADER
             <div class="input-group margin-bottom-sm" style="float:right">
                 <label class="control-label">Изменение яркости</label><br>
                 <input id="slider" type="text"
-                       data-slider-min="-50"
-                       data-slider-max="50"
-                       data-slider-step="5"
-                       value="5"
+                       data-slider-min="-250"
+                       data-slider-max="250"
+                       data-slider-step="10"
+                       value="0"
                        data-slider-value="0"/>
                 &nbsp;&nbsp;
-                <button id="brightnessButton" class='btn btn-danger'>Применить</button>
             </div>
         </div>
     </div>
@@ -58,13 +57,13 @@ HEADER
     <div class="row">
         <div class="col-xs-6 cols-md-6">
             <div id="input-div" style="float:left">
-                <img src="" id="input-img" alt=""/>
+                <canvas id="in-canvas"></canvas>
             </div>
 
         </div>
         <div class="col-xs-6 cols-md-6">
             <div id="output-div" style="float:right">
-                <canvas id="out-canvas" style=""></canvas>
+                <canvas id="out-canvas"></canvas>
             </div>
         </div>
     </div>
