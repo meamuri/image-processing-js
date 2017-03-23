@@ -24,11 +24,7 @@
 HEADER
 -->
 <div class="container header-container"><div class="row">
-        <div class="col-xs-6 cols-md-6">
-
-        </div>
-
-        <div class="col-xs-6 cols-md-6">
+        <div class="col-xs-12 cols-md-12">
 
         </div>
 
@@ -45,12 +41,13 @@ HEADER
         </div>
 
         <div class="col-xs-6 cols-md-6">
-            <div class="input-group margin-bottom-sm">
+            <div class="input-group margin-bottom-sm" style="float:right">
                 <label class="control-label">Изменение яркости</label><br>
                 <input id="slider" type="text"
                        data-slider-min="-50"
                        data-slider-max="50"
                        data-slider-step="5"
+                       value="5"
                        data-slider-value="0"/>
                 &nbsp;&nbsp;
                 <button id="brightnessButton" class='btn btn-danger'>Применить</button>
@@ -60,18 +57,15 @@ HEADER
 
     <div class="row">
         <div class="col-xs-6 cols-md-6">
-            <!--<canvas id="in-canvas" style="float:left"></canvas>-->
             <div id="input-div" style="float:left">
-                <img id="input-img" alt=""/>
+                <img src="" id="input-img" alt=""/>
             </div>
 
         </div>
         <div class="col-xs-6 cols-md-6">
-            <div id="output-div" style="float:left">
-                <canvas id="out-canvas"></canvas>
+            <div id="output-div" style="float:right">
+                <canvas id="out-canvas" style=""></canvas>
             </div>
-
-            <!--<div id="output-img" style="float:right"></div>-->
         </div>
     </div>
 </div>

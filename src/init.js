@@ -14,7 +14,6 @@ function initCtx(canvas, img) {
     };
 }
 
-
 function renderImage(file) {
     // generate a new FileReader object
     let reader = new FileReader();
@@ -22,7 +21,6 @@ function renderImage(file) {
     reader.onload = (event) => {
         let the_url = event.target.result;
         $('#input-div').html("<img id='img_src' src='" + the_url + "' />");
-        // $('#input-img').src = the_url;
 
         let img = new Image();
         img.src = the_url;
@@ -37,15 +35,13 @@ function renderImage(file) {
 }
 
 // handle input changes
-$("#upload-image").change(function() {
-    // console.log(this.files);
+$("#upload-image").change( function() {
     // grab the first image in the FileList object and pass it to the function
-    renderImage(this.files[0])
+    renderImage(this.files[0]);
 });
 
-// With JQuery
-$("#slider").slider();
-$("#destroyEx5Slider").click(() => {
-    // With JQuery
-    $("#slider").slider('destroy');
+let slider = $("#slider");
+slider.slider();
+slider.on("slide", function(slideEvt) {
+    $(this).attr('value', slideEvt.value);
 });
