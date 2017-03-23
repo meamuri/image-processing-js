@@ -1,3 +1,5 @@
+// import * as my_module from 'init';
+
 let toByte = (val) => {
   if (val > 255) {
       return 255;
@@ -17,20 +19,7 @@ let processingBrightness = (imageData, brightness) => {
     return imageData;
 };
 
-let initCtx = (canvas, img) => {
-    let ctx = canvas.getContext('2d');
 
-    let vRatio = canvas.width/ img.width;
-    let hRatio = canvas.height/ img.height;
-    let ratio = Math.min(hRatio, vRatio);
-    let centerShift_x = ( canvas.width - img.width*ratio ) / 2;
-    let centerShift_y = ( canvas.height - img.height*ratio ) / 2;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    img.onload = () => {
-        ctx.drawImage(img, 0,0, img.width, img.height,centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
-        img.style.display = 'none';
-    };
-};
 
 
 let main = () => {
@@ -44,9 +33,11 @@ let main = () => {
         initCtx(canvas, img);
 
         let imageDataObject = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        imageData = imageDataObject.data;
+        let imageData = imageDataObject.data;
+        const pixelCount = imageData.length;
 
-        console.log(imageData);
+        console.log(imageDataObject);
+        console.log(pixelCount);
 
         //let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         //imageData = processingBrightness(imageData, $('slider').attr('value'));
