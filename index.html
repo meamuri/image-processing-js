@@ -24,9 +24,9 @@
 HEADER
 -->
 <div class="container header-container"><div class="row">
-        <div class="col-xs-12 cols-md-12">
+    <div class="col-xs-12 cols-md-12">
 
-        </div>
+    </div>
 
 </div></div>
 
@@ -53,6 +53,49 @@ HEADER
             </div>
         </div>
     </div>
+<br>
+<!--
+begin Contrast
+-->
+    <div class="row">
+        <div class="col-xs-12 cols-md-12">
+            <div class="input-group margin-bottom-sm" style="float:right">
+                <label class="control-label">Изменение контраста</label><br>
+                <input id="contrast" type="text"
+                       data-slider-min="-128"
+                       data-slider-max="128"
+                       data-slider-step="4"
+                       value="0"
+                       data-slider-value="0"/>
+                &nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+<!--
+end Contrast
+-->
+    <br>
+<!--
+begin Saturation
+-->
+    <div class="row">
+        <div class="col-xs-12 cols-md-12">
+            <div class="input-group margin-bottom-sm" style="float:right">
+                <label class="control-label">Изменение насыщенности</label><br>
+                <input id="saturation" type="text"
+                       data-slider-min="-250"
+                       data-slider-max="250"
+                       data-slider-step="10"
+                       value="0"
+                       data-slider-value="0"/>
+                &nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+<!--
+end Saturation
+-->
+    <br>
 
     <div class="row">
         <div class="col-xs-6 cols-md-6">
@@ -84,6 +127,7 @@ FOOTER
         </div>
     </div></div>
 </div>
+
 
 <script src="src/app.js" type="text/javascript" defer></script>
 <script src="src/main.js" type="text/javascript" defer></script>
