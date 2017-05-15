@@ -33,41 +33,6 @@ function renderImage(file, canvas_in, canvas_out) {
 }
 
 
-const toByte = (val) => {
-    if (val > 255) {
-        return 255;
-    }
-    if (val < 0)
-        return 0;
-    return val;
-};
-
-
-function workWithSaturation(saturation, canvas_in, canvas_out) {
-
-}
-
-function workWithContrast(contrast, imageData) {
-    let data = imageData.data;
-
-    let factor = (259 * (contrast + 255)) / (255 * (259 - contrast));
-    for (let i = 0; i < data.length; i += 4) {
-        data[i]     = toByte(factor * (data[i] - 128) + 128);
-        data[i + 1] = toByte(factor * (data[i + 1] - 128) + 128);
-        data[i + 2] = toByte(factor * (data[i + 2] - 128) + 128);
-    }
-}
-
-function workWithBrightness(brightness, imageData) {
-    let data = imageData.data;
-
-    for (let i = 0; i < data.length; i += 4) {
-        data[i]     = toByte(brightness + data[i]);
-        data[i + 1] = toByte(brightness + data[i + 1]);
-        data[i + 2] = toByte(brightness + data[i + 2]);
-    }
-}
-
 function workWithImage(p, canvas_in, canvas_out, work) {
     let ctx = canvas_in[0].getContext('2d');
     let imageData = ctx.getImageData(0, 0, canvas_in[0].width, canvas_in[0].height);
@@ -116,6 +81,19 @@ function initAll() {
     $("#upload-image").change( function() {
         // grab the first image in the FileList object and pass it to the function
         renderImage(this.files[0], canvas_in, canvas_out);
+    });
+
+    let checked = false;
+    $("#cmn-toggle-1").on("change", (evnt) => {
+        checked = !checked;
+        if (checked) {
+            workWithImage(undefined, canvas_in, canvas_out, workWithSaturation);
+            return;
+        }
+        let ctx = canvas_in[0].getContext('2d');
+        let imageData = ctx.getImageData(0, 0, canvas_in[0].width, canvas_in[0].height);
+        let ctx_out = canvas_out[0].getContext('2d');
+        ctx_out.putImageData(imageData, 0, 0);
     });
 
 }

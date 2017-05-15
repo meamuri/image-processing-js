@@ -58,7 +58,19 @@ HEADER
 begin Contrast
 -->
     <div class="row">
-        <div class="col-xs-12 cols-md-12">
+
+        <div class="col-xs-6 cols-md-6">
+            <div class="input-group margin-bottom-sm" style="float:left">
+                <div class="switch">
+                    <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                    <label for="cmn-toggle-1"></label>
+                </div>
+                &nbsp;&nbsp;
+            </div>
+        </div>
+
+
+        <div class="col-xs-6 cols-md-6">
             <div class="input-group margin-bottom-sm" style="float:right">
                 <label class="control-label">Изменение контраста</label><br>
                 <input id="contrast" type="text"
@@ -71,30 +83,7 @@ begin Contrast
             </div>
         </div>
     </div>
-<!--
-end Contrast
--->
-    <br>
-<!--
-begin Saturation
--->
-    <div class="row">
-        <div class="col-xs-12 cols-md-12">
-            <div class="input-group margin-bottom-sm" style="float:right">
-                <label class="control-label">Изменение насыщенности</label><br>
-                <input id="saturation" type="text"
-                       data-slider-min="-250"
-                       data-slider-max="250"
-                       data-slider-step="10"
-                       value="0"
-                       data-slider-value="0"/>
-                &nbsp;&nbsp;
-            </div>
-        </div>
-    </div>
-<!--
-end Saturation
--->
+
     <br>
 
     <div class="row">
@@ -129,6 +118,7 @@ FOOTER
 </div>
 
 
+<script src="src/lib.js" type="text/javascript" defer></script>
 <script src="src/app.js" type="text/javascript" defer></script>
 <script src="src/main.js" type="text/javascript" defer></script>
 </body>
